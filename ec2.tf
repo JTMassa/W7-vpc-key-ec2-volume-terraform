@@ -20,11 +20,11 @@ resource "aws_ebs_volume" "ebs" {
   size              = 20 // size in GB
   tags = {
     Name = "Extra-volume"
-  
+
   }
 }
 resource "aws_volume_attachment" "attach" {
   instance_id = aws_instance.server.id
-  volume_id = aws_ebs_volume.ebs.id
+  volume_id   = aws_ebs_volume.ebs.id
   device_name = "/dev/sdb"
 }
